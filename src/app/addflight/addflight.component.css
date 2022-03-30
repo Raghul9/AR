@@ -1,0 +1,49 @@
+body{
+
+    background-size: cover;
+    background-image: url(src\assets\image\Cabin.jpg);
+    border-style:solid;
+    background-position: center;
+    background-repeat:no-repeat ;
+    height: 100vh;
+}
+
+.content{
+    
+
+
+     max-width: 750px;
+    max-height: 800vh;
+    margin:auto;
+    background-color:rgb(144, 144, 231);
+    padding-left:10px;    
+    opacity : 0.9;
+}
+button {   
+    background-color: #4CAF50;   
+    width: 20%;  
+     color: rgb(12, 12, 11);   
+     padding: 15px;   
+     margin: 10px 0px;   
+     border: none;   
+     border-radius: 1ch;
+     cursor: pointer;   
+      }
+      label{
+          font-size: large;
+          color: rgb(17, 15, 15);
+      }
+.menu-bar{
+    background: rgb(0,100,0);
+    text-align: center;
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style:none;
+    color:#fff
+}
+.menu-bar ul li{
+    width: 200px;
+    margin:10px;
+    padding: 5px
+}

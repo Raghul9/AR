@@ -1,0 +1,50 @@
+body{   
+    background-size: cover;
+        background-image: url(src\assets\image\background.jpg);
+        border-style:solid;
+        background-position: center;
+        background-repeat:no-repeat ;
+        height: 100vh;
+        
+          
+    }
+    
+    .content{
+        
+
+
+        max-width: 750px;
+       max-height: 800vh;
+       margin:auto;
+       background-color:rgb(68, 182, 36);
+       padding-left:10px;    
+       opacity : 0.4;
+   }
+    #form{
+        background-color:black;
+        height: 200px;
+       width:  450px;
+        margin:auto;
+        padding:70px;
+        opacity : 0.6;
+    }
+    td{
+        background-color: rgb(226, 255, 158);
+    }
+    th{
+        background-color: rgb(58, 226, 43);
+    }
+    .menu-bar{
+        background: rgb(0,100,0);
+        text-align: center;
+    }
+    .menu-bar ul{
+        display: inline-flex;
+        list-style:none;
+        color:#fff
+    }
+    .menu-bar ul li{
+        width: 200px;
+        margin:10px;
+        padding: 5px
+    }

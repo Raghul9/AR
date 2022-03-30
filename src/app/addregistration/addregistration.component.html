@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <form class="content" (ngSubmit)="saveUser(registration)" #registrationForm="ngForm"> <br>
+      <h1 style="text-align:left;">Registration </h1><br>
+      
+      <div class="row">
+        <label for="type">Title</label>
+        <div class="col-1g-8 col-8">
+        <select type="text" class="form-control" id="title" name="title" [(ngModel)]="registration.title" required #title=ngModel>
+          <option value="Mr.">Mr.</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Miss">Miss</option>
+        </select>
+      </div>
+        <br>
+        <label>First Name</label>
+        <div class="col-1g-8 col-8">
+            <input type="text" class="form-control" placeholder="First name" id="fname" name="fname" [(ngModel)]="registration.fname" required #fname=ngModel /> 
+            <div>
+              <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" style="color: red;"></div>
+              <div *ngIf="fname.errors?.['required']">First Name cannot be blank</div>
+            </div>
+          </div><br>
+      <label>Last Name</label>
+      <div class="col-1g-8 col-8">
+       <input type="text" class="form-control" placeholder="Last name" id="lname" name="lname" [(ngModel)]="registration.lname" required #lname=ngModel/>
+       <div>
+        <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" style="color: red;"></div>
+        <div *ngIf="lname.errors?.['required']">Last Name cannot be blank</div>
+      </div>
+      </div> <br>
+      <label>Gender</label>
+      <div  required >
+       <input type="radio" value="male" name="gender" id="True" [(ngModel)]="registration.gender" #gender=ngModel> Male &nbsp;
+      <input type="radio" value="female" name="gender" id="True" [(ngModel)]="registration.gender" #gender=ngModel> Female &nbsp;
+      <input type="radio" value="other" name="gender" id="True" [(ngModel)]="registration.gender" pgender=ngModel> Other &nbsp; <br>
+    </div> <br>
+    <label class="col-lg-10 col-10">Date Of Birth</label> 
+    <div> 
+    <input type="date" id="dob" name="dob" [(ngModel)]="registration.dob"  required #dob=ngModel/>
+    </div> <br>
+    <label>Email-Id</label>
+      <div class="col-1g-8 col-8">
+        <input type="email" class="form-control"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Enter Email Id" id="emailid" name="emailid" [(ngModel)]="registration.emailid"  required #emailid=ngModel/>
+        <div class="red.error" *ngIf="emailid.invalid && (emailid.dirty || emailid.touched)" style="color:red;">
+        <div *ngIf="emailid.errors?.['required']">Email is required</div>
+                 <div *ngIf="emailid.errors?.['pattern']">Invalid Email</div>
+                </div>
+    
+      </div> <br>
+       <label>Password</label>
+       <div class="col-1g-8 col-8">
+        <input type="password" class="form-control"  placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password" name="password" minlength=8 maxlength=30 [(ngModel)]="registration.password" email="True" required #password=ngModel/>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" style="color:red;">
+          <div *ngIf="password.errors?.['required']">Password is required</div>
+          <div *ngIf="password.errors?.['pattern']">Should contain 1 special Character,1 number,1 uppercase and min length 8</div>
+     </div>
+       </div> <br>
+       <label>Phone Number</label> <br>
+       <div class="col-1g-8 col-8">
+        <input type="number" class="form-control" placeholder="Phone Number" id="phoneno" name="phoneno"  [(ngModel)]="registration.phoneno" required #phoneno=ngModel/>
+       </div> <br><br>
+        <input style="margin-left: -25px;"  class="btn btn-danger" type="submit" value="Register" [disabled]="!registrationForm.valid" /> 
+       <br><br><br>
+        </div>
+    </form>
+  </div>
+</body>
+</html>

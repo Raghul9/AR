@@ -1,0 +1,18 @@
+body{
+
+    background-size: cover;
+    background-image: url(src\assets\image\background.jpg);
+    border-style:solid;
+    background-position: center;
+    background-repeat:no-repeat ;
+    height: 88vh;
+}
+
+.content{
+
+    max-width: 400px;
+    max-height: 800vh;
+    margin:center;
+    background-color:aliceblue;
+    padding-left:50px;    
+}

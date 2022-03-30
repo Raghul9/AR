@@ -1,0 +1,29 @@
+<body>
+<div>
+     <li class="nav-item" style="margin-left: 1500px;"><a class="nav-link"  routerLink="addpassenger" [state]="{flightid:0,flightdate:'',seatid:0,seatprice:0}"></a>Email Id:{{email}}  <div style="float: right;" class="content">
+        <a [routerLink]="['/userlogin/']" style="color: red;">LogOut</a>&nbsp;&nbsp;&nbsp;
+        </div></li>
+    </div>
+<br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;background-color: bisque;">Select Your Seat</p><br>
+<h4 style="color: red;">Flight Id :  {{flightid}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flight Date:{{dday}}</h4>
+<table  border="1" align="center" class="table">
+    <thead>
+      <tr>
+          <th>Seat Number</th>
+          <th>Seat Price</th>
+          <th>Seat Type</th>
+          <th>Button</th>
+      </tr>
+  </thead>
+
+  <tbody>
+            
+      <tr *ngFor="let seat of seatdetail">
+          <td>{{seat.seatId}}</td>
+          <td>{{seat.seatPrice}}</td> 
+          <td>{{seat.seatType}}</td> 
+          <td><input type="button" value="Proceed Next" name="Proceed" (click)="gotopassenger(seat.seatId,seat.seatPrice)"/></td>
+          </tr>
+</tbody>
+</table>  
+</body>

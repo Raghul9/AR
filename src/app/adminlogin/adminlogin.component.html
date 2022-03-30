@@ -1,0 +1,18 @@
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1 style="text-align: center;"> Admin Login </h1>   
+    <form (ngSubmit)="loginAdmin(adminlogin)" #adminloginForm="ngForm" >  
+        <div class="container">   
+            <label>Admin Id : </label>   
+            <input type="number" placeholder="Enter Email-Id" name="userid" id="userid"  [(ngModel)]="adminlogin.userid" required #userid=ngModel /><br>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" id="password"  [(ngModel)]="adminlogin.password" required #password=ngModel > 
+            Forgot <a href="#"> password? </a>   <br> 
+             <button type="submit">Login</button> 
+        </div>   
+    </form>
+  </body>
+

@@ -1,0 +1,19 @@
+#container {
+    min-height:10px;
+    position:relative;
+ } 
+ #header {
+    background:skyblue;
+   padding: 5px; 
+ }
+ #body{
+     background-color: azure;
+      max-width: cover;
+     max-height: cover;
+     margin:center;
+ } 
+    #footer {
+       
+       background:skyblue;
+       background-size:cover;
+        }

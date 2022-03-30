@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Passenger details</title>
+      </head>
+      <div>
+        <li style="margin-left: 1500px;" class="nav-item"><a class="nav-link"  routerLink="addpayment" [state]="{flightid:0,flightdate:'',seatid:0,seatprice:0,passid:0,pname:''}"></a>Email Id:{{email}}  <div style="float: right;" class="content">
+          <a [routerLink]="['/userlogin/']" style="color: red;">LogOut</a>&nbsp;&nbsp;&nbsp;
+          </div></li>
+      </div>
+<h4 style="color: rgb(168, 206, 65);">Flight Details :</h4>
+<br>
+<h4 style="color: red;">Flight Id:{{flightid}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Flight Date:{{dday}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seat Id:{{seatid}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seat Price:{{seatprice}}</h4>
+
+<body>
+  <div class="container mt-5">
+    <form class="content" (ngSubmit)="savePass(passenger)" #passengerForm="ngForm"> <br>
+      <h1 style="text-align:left;color: brown;">Passenger Details </h1><br>
+      <div class="row">
+        <label> Name</label>
+        <div class="col-1g-8 col-8">
+            <input type="text" class="form-control" placeholder="Passenger Name" id="pname" name="pname" [(ngModel)]="passenger.pname"   required #fname=ngModel /> 
+            <!-- <div>
+              <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" style="color: red;"></div>
+              <div *ngIf="fname.errors?.['required']">Name Cannot be Blank</div>
+            </div> -->
+          </div><br>
+      <label>Gender</label>
+      <div  required >
+       <input type="radio" value="male" name="pgender"id="True" [(ngModel)]="passenger.pgender" #pgender=ngModel> Male &nbsp;
+      <input type="radio" value="female" name="pgender"id="True" [(ngModel)]="passenger.pgender" #pgender=ngModel> Female &nbsp;
+      <input type="radio" value="other" name="pgender"id="True" [(ngModel)]="passenger.pgender" #pgender=ngModel> Other &nbsp; <br>
+    </div> <br>
+    <label class="col-lg-10 col-10">Passenger Age</label> 
+    <div> 
+    <input type="number" id="page" name="page" [(ngModel)]="passenger.page"  required #page=ngModel/>
+    </div> <br>
+    <label>Email-Id</label>
+      <div class="col-1g-8 col-8">
+        <input type="email" class="form-control" placeholder="emailid"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="pemailid" name="pemailid" [(ngModel)]="passenger.pemailid"  required #pemailid=ngModel/>
+        <div class="red.error" *ngIf="pemailid.invalid && (pemailid.dirty || pemailid.touched)" style="color:red;">
+          <div *ngIf="pemailid.errors?.['required']">Email is required</div>
+                   <div *ngIf="pemailid.errors?.['pattern']">Invalid Email</div>
+        </div>
+       </div> <br>
+     
+       <label>Phone Number</label> <br>
+       <div class="col-1g-8 col-8">
+        <input type="number" class="form-control" placeholder="Phone Number" id="pmobno" name="pmobno"  [(ngModel)]="passenger.pmobno" required #pmobno=ngModel/>
+       </div> <br><br>
+        <input class="btn btn-danger" type="submit" value="Save Details" [disabled]="!passengerForm.valid" /> 
+       <br><br><br>
+        </div>
+    </form>
+  </div>
+</body>
+</html>

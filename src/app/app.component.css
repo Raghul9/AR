@@ -1,0 +1,31 @@
+body{
+
+    background-size: cover;
+    background-image: url(src\assets\image\background.jpg);
+    border-style:solid;
+    background-position: center;
+    background-repeat:no-repeat ;
+    height: 120vh;
+}
+.content{
+
+    max-width: 400px;
+    max-height: 800vh;
+    margin:center;
+    background-color:aliceblue;
+    padding-left:50px;    
+}
+.menu-bar{
+    background: rgb(167, 219, 240);
+    text-align: center;
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style:none;
+    color:#fff
+}
+.menu-bar ul li{
+    width: 170px;
+    margin:10px;
+    padding: 10px
+}

@@ -1,0 +1,69 @@
+<html>
+<body>
+  <!-- <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    form{text-align: center;}
+  </style> -->
+<nav>
+  <div class="menu-bar">
+    <ul class="nav nav-tabs">
+      <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addflight">Add Flight</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/deleteflight">Delete Flight</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addseat">Add Seat</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/display">Display Flight</a></li>
+  </ul>
+  </div>
+</nav>
+<html>
+<body>
+  <br><br>
+  <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+  </style>
+     <div class="container mt-15"> 
+  <form class="content" (ngSubmit)="saveflight(fdetail)" #addFlightForm="ngForm"> <br>
+      <h1 class="text-center"><b>Add Flight</b></h1><br>
+    
+<label> From </label>   
+<input style="margin-left:70px" type="  text  " id="departureloc"name="departureloc"size="15" [(ngModel)]="fdetail.departureloc" required #departureloc=ngModel /> <br>
+<div>
+  <div *ngIf="departureloc.invalid && (departureloc.dirty || departureloc.touched)" style="color: red;"></div>
+  <div *ngIf="departureloc.errors?.['required']">From cannot be blank</div>
+</div><br>
+<label> To </label>   
+<input style="margin-left:91px" type="  text  " id="destination"name="destination"size="15" [(ngModel)]="fdetail.destination" required #destination=ngModel/> <br>  
+<div *ngIf="destination.invalid && (destination.dirty || destination.touched)" style="color: red;"></div>
+  <div *ngIf="destination.errors?.['required']">To cannot be blank</div><br>
+<label> Depart Hour </label>   
+<input style="margin-left:82px" type="number" id="departhour" name="departhour" size="2" [(ngModel)]="fdetail.departhour" required #departhour=ngModel> &nbsp;
+<label> Depart Min</label>   
+<input style="margin-left:30px" type="number" id="departmin" name="departmin" size="2" [(ngModel)]="fdetail.departmin" required #departmin=ngModel>  <br><br>
+<label> Arrival Hour </label>      
+<input style="margin-left:85px" type="number" id="arrivalthour" name="arrivalhour" size="2" [(ngModel)]="fdetail.arrivalhour" required #arrivalhour=ngModel> &nbsp;
+<label> Arrival Min </label>      
+<input style="margin-left:35px" type="number" id="arrivaltmin" name="arrivalmin" size="2" [(ngModel)]="fdetail.arrivalmin" required #arrivalmin=ngModel> <br><br>
+<label> Duration Hour </label>      
+<input style="margin-left:67px" type="number" id="durationhour" name="durationhour" size="2" [(ngModel)]="fdetail.durationhour" required #durationhour=ngModel>  &nbsp; 
+<label> Duration Min </label>      
+<input style="margin-left:20px" type="number" id="durationmin" name="durationmin" size="2" [(ngModel)]="fdetail.durationmin" required #durationmin=ngModel> <br><br> 
+    
+ <label> Cabin Space </label>   
+<input style="margin-left:83px" type="number" id="fcabin" name="fcabin" size="6" [(ngModel)]="fdetail.fcabin" required #fcabin=ngModel> <br> <br> 
+<label> Economy Class Price </label> 
+<input style="margin-left:21px" type="number" id="economicclassprice" name="economicclassprice" size="5" [(ngModel)]="fdetail.economicclassprice" required #economicclassprice=ngModel> <br><br>
+<label for="Business"> Business Class Price</label> 
+<input style="margin-left:26px" type="number" id="businessclassprice" name="businessclassprice" size="6" [(ngModel)]="fdetail.businessclassprice" required #businessclassprice=ngModel> <br><br>
+<label >Flight Date</label> 
+    
+    <input style="margin-left:96px" type="date" id="fdate" name="fdate" [(ngModel)]="fdetail.fdate"  required #fdate=ngModel/>
+     <br><br>
+<input style="margin-left:350px" type="submit" value="Add Flight" class= "btn btn-danger" [disabled]="!addFlightForm.valid" /> 
+       <br><br>
+ 
+</form>
+</div>
+</body>
+</html>

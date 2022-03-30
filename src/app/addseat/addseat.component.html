@@ -1,0 +1,60 @@
+<html>
+<body>
+  <!-- <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    form{text-align: center;}
+  </style> -->
+  <nav>
+    <div class="menu-bar">
+      <ul class="nav nav-tabs">
+        <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addflight">Add Flight</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/deleteflight">Delete Flight</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addseat">Add Seat</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/display">Display Flight</a></li>
+    </ul>
+    </div>
+  </nav>
+  <html>
+    <body>
+      <br><br><br>
+      <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        
+      </style>
+         <div class="container mt-15"> 
+      <form class="content" (ngSubmit)="saveSeat(seat)" #addSeatForm="ngForm"> <br>
+          <h1 class=""><b>Add Seat</b></h1><br>
+        
+    <label> Flight ID </label>   
+    <input style="margin-left:50px"  type="number" id="fid"name="fid"size="15" [(ngModel)]="seat.fid" required #fid=ngModel /> <br> <br>  
+    <div>
+      <div *ngIf="fid.invalid && (fid.dirty || fid.touched)" style="color: red;"></div>
+      <div *ngIf="fid.errors?.['required']">Flight ID cannot be blank</div>
+    </div>
+    <label> Seat ID </label>   
+    <input style="margin-left:60px" type="number" id="seatid" name="seatid" size="15" [(ngModel)]="seat.seatid" required #seatid=ngModel/> <br> <br>  
+    <div *ngIf="seatid.invalid && (seatid.dirty || seatid.touched)" style="color: red;"></div>
+      <div *ngIf="seatid.errors?.['required']">Seat ID cannot be blank</div>
+    <label> Seat Price </label>   
+    <input style="margin-left:40px" type="number" id="seatprice" name="seatprice" size="2" [(ngModel)]="seat.seatprice" required #seatprice=ngModel> <br><br> 
+    <div *ngIf="seatprice.invalid && (seatprice.dirty || seatprice.touched)" style="color: red;"></div>
+      <div *ngIf="seatprice.errors?.['required']">Seat Price cannot be blank</div>
+    <label> Seat Type</label>   
+    <input style="margin-left:40px"type="text" id="seattype" name="seattype" size="20" [(ngModel)]="seat.seattype" required #seattype=ngModel>  <br><br>
+    <div *ngIf="seattype.invalid && (seattype.dirty || seattype.touched)" style="color: red;"></div>
+      <div *ngIf="seattype.errors?.['required']"></div> 
+      <label> Status </label>   
+      <input style="margin-left:65px" type="text" id="status" name="status" size="20" [(ngModel)]="seat.status" required #status=ngModel> <br><br> 
+      <div *ngIf="status.invalid && (status.dirty || status.touched)" style="color: red;"></div> 
+    
+    <input style="margin-left:145px" type="submit" value="Add Seat" class= "btn btn-danger" [disabled]="!addSeatForm.valid" /> 
+           <br><br>
+    </form>
+    </div>
+    </body>
+    </html>
+</body>
+</html>

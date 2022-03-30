@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <div>
+        <li style="margin-left: 1500px;" class="nav-item"><a class="nav-link"></a>Email Id:{{email}}   <div style="float: right;" class="content">
+            <a [routerLink]="['/userlogin/']" style="color: red;">LogOut</a>&nbsp;&nbsp;&nbsp;
+            </div></li>
+      </div>
+<body>
+<div class="container mt-5 p-130px ">
+    <form class="content">
+        <h5>Flight Details</h5>
+<div style="color: red; font-size: medium;">
+<h5>Flight Id:{{flightid}}</h5>
+<h5>Flight Date:{{flightdate | date:'yyyy-MM-dd'}} </h5>
+<h5>Seat Id:{{seatid}}</h5>
+<h5>Seat Price:{{seatprice}}</h5>
+<h5>Passenger Id:{{passid}}</h5>
+<h5>Passenger Name:{{passname}}</h5>
+</div>
+<br>
+</form>
+<form class="content">
+        <div class="col-md-5">
+            <div class="payment-info">
+                <div class="type d-block mt-3 mb-1">
+                    <h3 style="text-align: left;">Pay ₹ {{seatprice}} </h3>
+                    </div>
+                    <h6 class="type d-block mt-3 mb-1">Card type:</h6>
+     <label class="radio"> <input type="radio" name="card" value="payment"> DebitCard</label> &nbsp;
+        <label class="radio"> <input type="radio" name="card" value="payment"> CreditCard</label>
+                <div><br>
+                    <h6 class="credit-card-label">Cardholder Name:</h6>
+                    <small>(please enter the same name which is written on your card)</small>
+                <input type="text" class="form-control credit-inputs" placeholder="Name" required/>
+                    </div>
+                <div><h6 class="credit-card-label"> Card number</h6>
+        <input type="text" class="form-control credit-inputs" placeholder="0000 0000 0000 0000" required/></div>
+                <div class="row">
+                    <div class="col-md-6"><label class="credit-card-label">Date</label>
+             <input type="text" class="form-control credit-inputs" placeholder="MM/YY" required>
+                    </div>
+                    <div class="col-md-6"><label class="credit-card-label">CVV</label><input type="text" class="form-control credit-inputs" placeholder="000" required/></div>
+                </div><br>
+                    
+                <input style="margin-left:85px" type="button" value="Pay Now" (click)="savePayment()" class=col-lg-8 col-8/> <br> <br>
+                
+            </div>
+        </div>
+        </form>
+</div>
+</body>
+</html>

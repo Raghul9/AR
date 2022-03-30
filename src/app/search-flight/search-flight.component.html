@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>Flight Ticket Booking</title>
+</head>
+<nav>
+  <div class="menu-bar">
+        <ul class="nav nav-tabs" style="color: brown;">
+<li style="font-size:20px ;" class="nav-item"><a class="nav-link"  routerLink="/ticketcancel">Cancel Ticket</a></li>
+          <li style="font-size:20px ;" class="nav-item"><a class="nav-link"  routerLink="/bookings">Bookings</a></li>
+          <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/searchflight" [state]="{emailid:''}">Search Flight</a></li>
+        </ul>
+        </div>
+</nav>
+
+<div>
+   <li class="nav-item" style="margin-left: 1600px;">Email Id:{{email}} <div style="float: right;" class="content">
+    <a [routerLink]="['/userlogin/']" style="color: red;">LogOut</a>&nbsp;&nbsp;&nbsp;
+    </div></li>
+   
+</div>
+<body>
+  <div class="container mt-5">
+<form class="content" (ngSubmit)="listFlight(flightlist)" #loginForm="ngForm">
+    
+          <label style="font-size: 25px;color: crimson;" for="departureloc">Source Location : </label>
+        <div class="col-1g-8 col-8">
+        <select type="departureloc" class="form-control" id="departureloc" name="departureloc" [(ngModel)]="flightlist.departureloc" required #departureloc=ngModel>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Goa">Goa</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Pune">Pune</option>
+          <option value="Banglore">Banglore</option>
+        </select>
+      </div>
+      <br>
+          <label style="font-size: 25px;color: crimson;" for="destination">Departure Location : </label>
+          <div class="col-1g-8 col-8">
+          <select type="destination" class="form-control" id="destination" name="destination" [(ngModel)]="flightlist.destination" required #destination=ngModel>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Goa">Goa</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Pune">Pune</option>
+            <option value="Banglore">Banglore</option>
+          </select>
+        </div>
+        <br>
+          <label style="font-size: 25px;color: crimson;" for="fdate">Enter Date of Journey : &nbsp;</label>
+          <input
+            type="date"
+            id="fdate"
+            name="fdate"
+            [(ngModel)]="flightlist.fdate"
+            required
+            #fdate="ngModel"
+          /><br><br>
+          <input style="margin-left: 150px;" class="btn btn-danger" type="submit" value="Search" />
+  </form>
+  </div>
+
+  <!-- <div>
+    {{getdata.fid}}
+    {{getdata.departureloc}
+    {{getdata.destination}}
+    {{getdata.departhour}}
+    {{getdata.departmin}}
+    {{getdata.arrivalhour}}
+    {{getdata.arrivalmin}}
+    {{getdata.durationhour}}
+    {{getdata.durationmin}}
+    {{getdata.economicclassprice}}
+    {{getdata.businessclassprice}}
+</div>  -->
+<br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;background-color: aliceblue;" >Available Flights </p><br>
+<table  border="1"  align="center" class="table">
+    <thead>
+        <tr style="border:2">
+            <th>Flight Id</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Depart Hour</th>
+            <th>Depart Minutes</th>
+            <th>Arrival Hour</th>
+            <th>Arrival Min</th>
+            <th>Duration Hour</th>
+            <th>Duration Min</th>
+            <th>Economic Class Price</th>
+            <th>Business Class Price</th>
+            <th>Flight Date</th>
+            <th>Button</th>
+
+        </tr>
+    </thead>
+    <tbody style="font-size: medium;">
+        <tr *ngFor="let fdetail of flight">
+            <td>{{fdetail.fId}}</td>
+            <td>{{fdetail.departureLoc}}</td>
+            <td>{{fdetail.destination}}</td>
+            <td>{{fdetail.departHour}}</td>
+            <td>{{fdetail.departMin}}</td>
+            <td>{{fdetail.arrivalHour}}</td>
+            <td>{{fdetail.arrivalMin}}</td>
+            <td>{{fdetail.durationHour}}</td>
+            <td>{{fdetail.durationMin}}</td>
+            <td>{{fdetail.economicClassPrice}}</td>
+            <td>{{fdetail.businessClassPrice}}</td>
+            <td>{{fdetail.fDate | date:'yyyy-MM-dd'}}</td>
+            <td><input type="button" value="Proceed to Seat" name="Proceed" (click)="gotoseat(fdetail.fId,fdetail.fDate)"/></td>
+        </tr>
+  </tbody>
+</table>
+</body>
+
+<!-- <br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;">Select Seats </p><br>
+<table  border="1"  align="center" class="table">
+   
+
+</table>  -->

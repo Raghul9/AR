@@ -1,0 +1,77 @@
+body{
+
+    background-size: cover;
+    background-image: url(src\assets\image\background.jpg);
+    border-style:solid;
+    background-position: center;
+    background-repeat:no-repeat ;
+    height: 88vh;
+}
+/*
+.content{
+
+    max-width: 400px;
+    max-height: 800vh;
+    margin:center;
+    background-color:aliceblue;
+    padding-left:50px;    
+} */
+Body {  
+     
+    font-family: Calibri, Helvetica, sans-serif;  
+    /* background-color: pink;   */
+  }  
+  button {   
+         background-color: #4CAF50;   
+         width: 20%;  
+          color: rgb(12, 12, 11);   
+          padding: 15px;   
+          margin: 10px 0px;   
+          border: none;   
+          border-radius: 1ch;
+          cursor: pointer;   
+           }   
+   /* form {   
+       
+       
+          border: 3px solid #f1f1f1;   
+      }    */
+   input[type=number], input[type=password] {   
+          width: 100%;   
+          align-self: center;
+          margin: 8px 0;  
+          padding: 12px 20px;   
+          display: inline-block;   
+          border: 2px solid green;   
+          box-sizing:border-box;   
+      }  
+   button:hover {   
+          opacity: 0.7;   
+      }   
+    .cancelbtn {   
+          width: auto;   
+          padding: 10px 18px;  
+          margin: 10px 5px;  
+      }   
+          
+       
+   .container {  
+           width: 35%; 
+           margin: auto;
+           background: center;
+         
+           border-radius: 1cm;
+           
+ 
+       
+          padding: 20px;  
+          background-color: rgb(166, 195, 214);  
+      }
+
+      td{
+        background-color: rgb(226, 255, 158);
+    }
+    th{
+        background-color: rgb(58, 226, 43);
+    }
+    

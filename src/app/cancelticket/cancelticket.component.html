@@ -1,0 +1,47 @@
+<li style="margin-left: 1500px;" class="nav-item"><a class="nav-link"></a>Email Id:{{email}}   <div style="float: right;" class="content">
+  <a [routerLink]="['/userlogin/']" style="color: red;">LogOut</a>&nbsp;&nbsp;&nbsp;
+  </div></li>
+  <nav>
+    <div class="menu-bar">
+          <ul class="nav nav-tabs" style="color: brown;">
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link"  routerLink="/ticketcancel">Cancel Ticket</a></li>
+            <li style="font-size:20px ;" class="nav-item"><a class="nav-link"  routerLink="/bookings">Bookings</a></li>
+            <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/searchflight" [state]="{emailid:''}">Search Flight</a></li>
+          </ul>
+          </div>
+  </nav>
+<body>
+    <div class="container mt-5">
+      <form class="content" (ngSubmit)="listTicket(ticketlist)" #ticketForm="ngForm"> <br>
+        <h1 style="text-align:left;">Ticket Cancellation </h1><br>
+        
+        <div class="row">
+          <label>Ticket No</label>
+          <div class="col-1g-8 col-8">
+              <input type="number" class="form-control" placeholder="Ticket Number" id="tid" name="tid" [(ngModel)]="ticketlist.tid"   required #tid=ngModel /> 
+              <br>
+              <input style="margin-left: 150px;" class="btn btn-danger" type="submit" value="Search" />
+         <br><br><br>
+          </div>
+        </div>
+      </form>
+    </div>
+  <br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;">Ticket Details </p><br>
+<table  border="1"  align="center" class="table">
+    <thead>
+        <tr style="border:2">
+            <th>Ticket Id</th>
+            <th>Ticket Price</th>
+            <th>Cancel Ticket</th>
+
+        </tr>
+    </thead>
+    <tbody style="font-size: medium;">
+        <tr *ngFor="let ticket of ticket">
+            <td>{{ticket.tid}}</td>
+            <td>{{ticket.tPrice}}</td> 
+            <td><input class="btn btn-danger" type="button" value="Cancel Ticket" name="Cancel Ticket" (click)="saveflight(ticketlist)" /></td>
+        </tr>
+  </tbody>
+</table>
+</body>

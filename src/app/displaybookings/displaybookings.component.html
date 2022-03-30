@@ -1,0 +1,34 @@
+<nav>
+    <div class="menu-bar">
+          <ul class="nav nav-tabs" style="color: brown;">
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link"  routerLink="/ticketcancel">Cancel Ticket</a></li>
+            <li style="font-size:20px ;" class="nav-item"><a class="nav-link"  routerLink="/bookings">Bookings</a></li>
+            <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/searchflight" [state]="{emailid:''}">Search Flight</a></li>
+          </ul>
+          </div>
+  </nav>
+<br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;background-color: aliceblue;" >My Bookings </p><br>
+<table  border="1"  align="center" class="table">
+    <thead>
+        <tr style="border:2">
+            <th>Ticket Number</th>
+            <th>Flight Id</th>
+            <th>Seat Id</th>
+            <th>Ticket Price</th>
+            <th>Flight Date</th>
+            <th>Status</th>
+            <th>Pay Id</th>
+        </tr>
+    </thead>
+    <tbody style="font-size: medium;">
+        <tr *ngFor="let tic of ticket">
+            <td>{{tic.tId}}</td>
+            <td>{{tic.fId}}</td>
+            <td>{{tic.seatId}}</td>
+            <td>{{tic.tPrice}}</td>
+            <td>{{tic.fDate | date:'yyyy-MM-dd'}}</td>
+            <td>{{tic.status}}</td>
+            <td>{{tic.payId}}</td>
+        </tr>
+  </tbody>
+</table>

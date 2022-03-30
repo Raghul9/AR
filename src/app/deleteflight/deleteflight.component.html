@@ -1,0 +1,39 @@
+<html>
+<body>
+  <nav>
+    <div class="menu-bar">
+      <ul class="nav nav-tabs">
+        <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addflight">Add Flight</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/deleteflight">Delete Flight</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addseat">Add Seat</a></li>
+  <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/display">Display Flight</a></li>
+    </ul>
+    </div>
+  </nav>
+  <html>
+    <body>
+      <br><br><br><br><br><br>
+      <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+        form{text-align: center;}
+      </style>
+      <div class="container mt-15"> 
+        <form class="content" (ngSubmit)="deleflight(fdelete)" #deleteFlightForm="ngForm"> <br>
+      
+          <h1 class="text-center"><b>Delete Flight</b></h1> <br><br><br>
+       
+    
+    
+    <label>Flight ID </label>         
+    <input style="margin-left:45px" type="number" id="fid" name="fid" size="15" [(ngModel)]="fdelete.fid" required #fid=ngModel> &nbsp;   
+    <input type="submit" value="Delete Flight" class= "btn btn-danger" [disabled]="!deleteFlightForm.valid" /> 
+    <br><br><br>
+    
+    </form>
+      </div>
+    </body>
+    </html>
+</body>
+</html>

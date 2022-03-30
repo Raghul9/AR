@@ -1,0 +1,60 @@
+<html>
+    <nav>
+        <div class="menu-bar">
+          <ul class="nav nav-tabs">
+            <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addflight">Add Flight</a></li>
+      <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/deleteflight">Delete Flight</a></li>
+      <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/addseat">Add Seat</a></li>
+      <li style="font-size:20px ;" class="nav-item"><a class="nav-link" routerLink="/display">Display Flight</a></li>
+        </ul>
+        </div>
+      </nav>
+    <body>
+
+<h1 class=""><b>List of Flights</b></h1><br>
+<style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    
+  </style>
+
+<table  border="1"  align="center" class="table">
+    <thead>
+        <tr>
+            <th>Flight Id</th>
+        <th>Departure Location</th> 
+       <th>Destination Location</th>
+         <th>Depart Hour</th>
+       <th>Depart Min</th>
+       <th>Arrival Hour</th>
+      <th>Arrival Min</th>
+      <th>Duration Hour</th>
+       <th>Duration Min</th>
+         <th>Cabin Space</th>
+       <th>Economicclass Price</th>
+    <th>Business class Price</th>
+    <th>Journey Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fd of display">
+            <td>{{fd.fId}}</td>
+            <td>{{fd.departureLoc}}</td>
+            <td>{{fd.destination}}</td>
+            <td>{{fd.departHour}}</td>
+            <td>{{fd.departMin}}</td>
+            <td>{{fd.arrivalHour}}</td>
+            <td>{{fd.arrivalMin}}</td>
+            <td>{{fd.durationHour}}</td>
+            <td>{{fd.durationMin}}</td>
+            <td>{{fd.fCabin}}</td>
+            <td>{{fd.economicClassPrice}}</td>
+            <td>{{fd.businessClassPrice}}</td>
+            <td>{{fd.fDate | date:'yyyy-MM-dd'}}</td>
+            
+        </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

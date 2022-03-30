@@ -1,0 +1,18 @@
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+<h1 style="text-align: center;"> User Login </h1>   
+    <form class="content" (ngSubmit)="loginUser(userlogin)" #loginForm="ngForm" >  
+        <div class="container"  >   
+            <label>Email-Id : </label>   
+            <input type="text" placeholder="Enter Email-Id" name="emailid" id="emailid"  [(ngModel)]="userlogin.emailid" required #emailid=ngModel >  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" id="password"  [(ngModel)]="userlogin.password" required #password=ngModel > 
+           <br> 
+            <button type="submit">Login</button>      
+              
+        </div>   
+    </form>
+  </body>

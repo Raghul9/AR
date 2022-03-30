@@ -1,0 +1,91 @@
+<!-- <br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;">Department Listing </p><br>
+<table  border="1"  align="center" class="table">
+    <thead>
+        <tr>
+            <th>fid</th>
+            <th>departureloc</th>
+            <th>destination</th>
+            <th>destination</th>
+            <th>departhour</th>
+            <th>departmin</th>
+            <th>arrivalhour</th>
+            <th>arrivalmin</th>
+            <th>durationHour</th>
+            <th>durationMin</th>
+            <th>economicclassprice</th>
+            <th>businessclassprice</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fdetail of flightlist">
+            <td>{{fdetail.fid}}</td>
+            <td>{{fdetail.departureloc}}</td>
+            <td>{{fdetail.destination}}</td>
+            <td>{{fdetail.departhour}}</td>
+            <td>{{fdetail.departhourmin}}</td>
+            <td>{{fdetail.arrivalhour}}</td>
+            <td>{{fdetail.arrivalmin}}</td>
+            <td>{{fdetail.durationhour}}</td>
+            <td>{{fdetail.durationmin}}</td>
+            <td>{{fdetail.economicclassprice}}</td>
+            <td>{{fdetail.businessclassprice}}</td>
+        </tr>
+    </tbody>
+
+</table> -->
+
+<!-- 
+<div>
+            {{flightdata.fid}}
+            {{flightdata.departureloc}
+            {{flightdata.destination}}
+            {{flightdata.departhour}}
+            {{flightdata.departmin}}
+            {{flightdata.arrivalhour}}
+            {{flightdata.arrivalmin}}
+            {{flightdata.durationhour}}
+            {{flightdata.durationmin}}
+            {{flightdata.economicclassprice}}
+            {{flightdata.businessclassprice}}
+        </div> -->
+
+
+        
+        <!-- <br><br><p style="font-size: xx-large; color: rgb(10, 10, 107); text-align: center;">Available Flights </p><br>
+        <table  border="1"  align="center" class="table">
+            <thead>
+                <tr>
+                    <th>fid</th>
+                    <th>departureloc</th>
+                    <th>destination</th>
+                    <th>departhour</th>
+                    <th>depart</th>
+                    <th>arrivalhour</th>
+                    <th>arrivalmin</th>
+                    <th>durationHour</th>
+                    <th>durationMin</th>
+                    <th>economicclassprice</th>
+                    <th>businessclassprice</th>
+                    <th>Book Button</th>
+        
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fdetail of flight">
+                    <td>{{fdetail.fId}}</td>
+                    <td>{{fdetail.departureLoc}}</td>
+                    <td>{{fdetail.destination}}</td>
+                    <td>{{fdetail.departHour}}</td>
+                    <td>{{fdetail.departMin}}</td>
+                    <td>{{fdetail.arrivalHour}}</td>
+                    <td>{{fdetail.arrivalMin}}</td>
+                    <td>{{fdetail.durationHour}}</td>
+                    <td>{{fdetail.durationMin}}</td>
+                    <td>{{fdetail.economicClassPrice}}</td>
+                    <td>{{fdetail.businessClassPrice}}</td>
+                    <td><input type="button" value="Proceed" name="Proceed" (click)="gotologin(fdetail.fId)"/>
+                </tr>
+            </tbody>
+        
+        </table> -->
